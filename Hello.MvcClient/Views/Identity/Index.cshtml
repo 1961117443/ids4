@@ -1,0 +1,14 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>这是受保护的资源，需要登录验证</h1>
+
+@{
+    if (ViewBag.token != null)
+    {
+        <dt>token:</dt>
+        <dd>@ViewBag.token</dd>
+    }
+}

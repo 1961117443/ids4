@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FreeSql" Version="0.12.21" />
+    <PackageReference Include="FreeSql.Provider.SqlServer" Version="0.12.21" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Hello.IService\Hello.IService.csproj" />
+  </ItemGroup>
+
+</Project>
