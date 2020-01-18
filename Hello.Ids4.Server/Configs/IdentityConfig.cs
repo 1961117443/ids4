@@ -88,26 +88,13 @@ namespace Hello.IdentityServer.Configs
                 },
                  new Client
                 {
-                    ClientId = "Code.MVC",
-                    ClientName = "MVC shop",
-                    AllowedGrantTypes = GrantTypes.Code,
+                    ClientId = "demo_api_swagger",
+                    ClientName = "Swagger UI for demo_api",
+                    AllowedGrantTypes = GrantTypes.Implicit,
+                    AllowAccessTokensViaBrowser  =true,
                     //RequireConsent=true,//如果不需要显示否同意授权 页面 这里就设置为false
-                    RedirectUris = { "http://localhost:5001/signin-oidc" },//登录成功后返回的客户端地址
-                    PostLogoutRedirectUris = { "http://localhost:5001/signout-callback-oidc" },//注销登录后返回的客户端地址
-                    //ClientSecrets = {
-                    //    new Secret("secret".Sha256())
-                    //},
-                    AllowedScopes =//下面这两个必须要加吧 不太明白啥意思
-                    {
-                        IdentityServerConstants.StandardScopes.OpenId,
-                        IdentityServerConstants.StandardScopes.Profile,
-                        "api1"
-                    },
-                    //AllowAccessTokensViaBrowser = true,
-                    //AllowedCorsOrigins =
-                    //{
-                    //    "http://localhost:5001"
-                    //}
+                    RedirectUris = { "http://localhost:8090/swagger/oauth2-reidrect.html" },//登录成功后返回的客户端地址 
+                    AllowedScopes ={"demo_api"} 
                 },
                 //混合模式
                 new Client
@@ -139,7 +126,8 @@ namespace Hello.IdentityServer.Configs
                 new ApiResource("api1","api项目一")
                 {
                    // ApiSecrets = { new Secret("api1pwd".Sha256()) }
-                }
+                },
+                new ApiResource("demo_api","Demo API with Swagger")
             };
         }
     }
